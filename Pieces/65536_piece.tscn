@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2qlux3afcsc8"]
+
+[ext_resource type="PackedScene" uid="uid://pxjolu4auwab" path="res://Pieces/piece.tscn" id="1_ecw84"]
+[ext_resource type="Texture2D" uid="uid://scarjpg4hs0y" path="res://assets/icons8-cinnamoroll-100 (13).png" id="2_ecw84"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecw84"]
+bg_color = Color(1, 0, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_lu4xw"]
+font_size = 30
+font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="65536piece" instance=ExtResource("1_ecw84")]
+value = 65536
+
+[node name="Panel" type="Panel" parent="." index="0"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecw84")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_ecw84")
+offset = Vector2(0, 15)
+
+[node name="Label" type="Label" parent="Sprite2D" index="0"]
+offset_left = -43.252747
+offset_top = -53.0
+offset_right = 42.747253
+offset_bottom = -11.0
+text = "65536"
+label_settings = SubResource("LabelSettings_lu4xw")
+horizontal_alignment = 1
+vertical_alignment = 1

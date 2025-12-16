@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbqn4tuhtnpy1"]
+
+[ext_resource type="PackedScene" uid="uid://pxjolu4auwab" path="res://Pieces/piece.tscn" id="1_0ggw8"]
+[ext_resource type="PackedScene" uid="uid://y34b4htic23u" path="res://Pieces/4_piece.tscn" id="2_dq32d"]
+[ext_resource type="Texture2D" uid="uid://bclx1gelq8074" path="res://assets/svg_cinnamoroll.png" id="3_0jjv0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jjv0"]
+bg_color = Color(0.8901961, 0.8862745, 0.8901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_0jjv0"]
+font_size = 30
+font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="2piece" instance=ExtResource("1_0ggw8")]
+value = 2
+next_value = ExtResource("2_dq32d")
+
+[node name="Panel" type="Panel" parent="." index="0"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jjv0")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_0jjv0")
+offset = Vector2(0, 15)
+
+[node name="Label" type="Label" parent="Sprite2D" index="0"]
+offset_left = -43.252747
+offset_top = -53.0
+offset_right = 42.747253
+offset_bottom = -11.0
+text = "2"
+label_settings = SubResource("LabelSettings_0jjv0")
+horizontal_alignment = 1
+vertical_alignment = 1

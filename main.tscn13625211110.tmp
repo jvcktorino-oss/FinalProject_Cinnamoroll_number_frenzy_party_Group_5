@@ -1,0 +1,272 @@
+[gd_scene load_steps=19 format=3 uid="uid://dym5dpe7674p6"]
+
+[ext_resource type="Texture2D" uid="uid://dgex8bon2vqvf" path="res://assets/bg (2).png" id="1_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cjfps5fop4kp6" path="res://assets/GRID boardbackground.png" id="2_272bh"]
+[ext_resource type="Script" uid="uid://d3m5naquudu3c" path="res://grid.gd" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://g1y3v7j1tyvp" path="res://touch_control.gd" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cbqn4tuhtnpy1" path="res://Pieces/2_piece.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://y34b4htic23u" path="res://Pieces/4_piece.tscn" id="5_5vw27"]
+[ext_resource type="Script" uid="uid://d1ob1m62dlfpt" path="res://keyboard_control.gd" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://btyxjgxr6m47c" path="res://piece_background.tscn" id="6_5vw27"]
+[ext_resource type="FontFile" uid="uid://crrsobpjiqa0j" path="res://assets/PressStart2P-Regular.ttf" id="9_kek77"]
+[ext_resource type="AudioStream" uid="uid://cle5dh817srl4" path="res://assets/sounds/UI_Quirky7.mp3" id="10_4c57u"]
+[ext_resource type="AudioStream" uid="uid://dhbptksh4qkuj" path="res://assets/sounds/Puzzle-Game-3_Looping-1.ogg" id="11_efxa6"]
+[ext_resource type="AudioStream" uid="uid://c3n2wtpm7p3gf" path="res://assets/sounds/game-over-417465.mp3" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://decydkd0uo1nl" path="res://assets/sounds/combine-394498.mp3" id="13_ycdy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font_size = 26
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(1, 1)
+stacked_shadow_0/color = Color(1, 1, 1, 1)
+stacked_shadow_0/outline_size = 23
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.33333334, 0.7529412, 0.9254902, 0.9607843)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font_size = 63
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c57u"]
+bg_color = Color(0, 0, 0, 0.28627452)
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+line_spacing = 8.0
+font = ExtResource("9_kek77")
+font_size = 34
+font_color = Color(0.537395, 0.94186765, 0.909862, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 576.0
+offset_bottom = 1024.0
+texture = ExtResource("1_5vw27")
+stretch_mode = 3
+
+[node name="BoardBackground" type="Sprite2D" parent="."]
+position = Vector2(288, 720)
+texture = ExtResource("2_272bh")
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("3_lquwl")
+four_piece_chance = 10
+two_piece = ExtResource("4_272bh")
+four_piece = ExtResource("5_5vw27")
+background_piece = ExtResource("6_5vw27")
+
+[node name="ScoreLabel" type="Label" parent="Grid"]
+offset_left = 332.0
+offset_top = 247.0
+offset_right = 453.0
+offset_bottom = 301.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="Grid"]
+offset_left = 384.0
+offset_top = 406.0
+offset_right = 531.0
+offset_bottom = 451.0
+text = "New Game"
+
+[node name="TouchControl" type="Node2D" parent="."]
+script = ExtResource("4_7mycd")
+
+[node name="KeyboardControl" type="Node2D" parent="."]
+script = ExtResource("5_272bh")
+
+[node name="GameOverLabel" type="Panel" parent="."]
+custom_minimum_size = Vector2(512, 512)
+offset_left = 32.0
+offset_top = 464.0
+offset_right = 544.0
+offset_bottom = 976.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="Label" type="Label" parent="GameOverLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -102.0
+offset_right = 199.0
+offset_bottom = 47.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER!"
+label_settings = SubResource("LabelSettings_5vw27")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGameButton2" type="Button" parent="GameOverLabel"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 331.0
+offset_right = 340.0
+offset_bottom = 376.0
+text = "Try Again"
+
+[node name="PopupSettings" type="Panel" parent="."]
+offset_left = 56.0
+offset_top = 456.0
+offset_right = 531.0
+offset_bottom = 739.0
+
+[node name="OffSound" type="Button" parent="PopupSettings"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 103.0
+offset_right = 281.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 47
+text = "♬"
+
+[node name="StartMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Panel" type="TextureRect" parent="StartMenu"]
+custom_minimum_size = Vector2(576, 1024)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -3.0
+offset_right = 576.0
+offset_bottom = 1021.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5vw27")
+
+[node name="Panel2" type="Panel" parent="StartMenu/Panel"]
+custom_minimum_size = Vector2(576, 1024)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -512.0
+offset_right = 288.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4c57u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/Panel/Panel2"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 302.0
+offset_right = 532.0
+offset_bottom = 901.0
+size_flags_vertical = 4
+theme_override_constants/separation = 31
+
+[node name="Label" type="Label" parent="StartMenu/Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Cinnamoroll 
+Number 
+Frenzy Party"
+label_settings = SubResource("LabelSettings_efxa6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="StartMenu/Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 25
+text = "
+Start Game
+
+"
+
+[node name="Settings" type="Button" parent="StartMenu/Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 25
+text = "
+Settings
+
+"
+
+[node name="QuitButton" type="Button" parent="StartMenu/Panel/Panel2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 25
+text = "
+Quit
+
+"
+
+[node name="Hamburger Menu" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 23.0
+offset_right = 555.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 32
+text = "☰"
+
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_4c57u")
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_efxa6")
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_dg77c")
+
+[node name="MergeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ycdy4")
+volume_db = 12.235
+
+[connection signal="pressed" from="Grid/NewGameButton" to="Grid" method="_on_new_game_button_pressed"]
+[connection signal="move" from="KeyboardControl" to="Grid" method="_on_keyboard_control_move"]
+[connection signal="pressed" from="GameOverLabel/NewGameButton2" to="Grid" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="StartMenu/Panel/Panel2/VBoxContainer/StartButton" to="Grid" method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMenu/Panel/Panel2/VBoxContainer/Settings" to="Grid" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="StartMenu/Panel/Panel2/VBoxContainer/Settings" to="Grid" method="_on_settings_pressed"]
+[connection signal="pressed" from="StartMenu/Panel/Panel2/VBoxContainer/QuitButton" to="Grid" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Hamburger Menu" to="Grid" method="_on_button_pressed"]
+[connection signal="pressed" from="Hamburger Menu" to="Grid" method="_on_hamburger_menu_pressed"]
+[connection signal="pressed" from="Hamburger Menu" to="Grid" method="_on_menu_pressed"]

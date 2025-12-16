@@ -1,0 +1,306 @@
+[gd_scene load_steps=21 format=3 uid="uid://dym5dpe7674p6"]
+
+[ext_resource type="Texture2D" uid="uid://ce5tg5so1qq1g" path="res://assets/Blue.png" id="1_w48qg"]
+[ext_resource type="Texture2D" uid="uid://cjfps5fop4kp6" path="res://assets/GRID boardbackground.png" id="2_272bh"]
+[ext_resource type="Script" uid="uid://d3m5naquudu3c" path="res://grid.gd" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cbqn4tuhtnpy1" path="res://Pieces/2_piece.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://y34b4htic23u" path="res://Pieces/4_piece.tscn" id="5_5vw27"]
+[ext_resource type="Script" uid="uid://d1ob1m62dlfpt" path="res://keyboard_control.gd" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://btyxjgxr6m47c" path="res://Pieces/piece_background.tscn" id="6_5vw27"]
+[ext_resource type="PackedScene" uid="uid://gotaa0divaxa" path="res://sfx.tscn" id="8_efxa6"]
+[ext_resource type="PackedScene" uid="uid://hrol7p8ntm1v" path="res://main_theme.tscn" id="9_efxa6"]
+[ext_resource type="AudioStream" uid="uid://cd22bfj3kwgge" path="res://assets/sounds/sharp-pop-328170.mp3" id="11_efxa6"]
+[ext_resource type="AudioStream" uid="uid://c3n2wtpm7p3gf" path="res://assets/sounds/game-over-417465.mp3" id="12_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bn6hxyl84cins" path="res://assets/icons8-up-squared-64.png" id="12_ycdy4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+bg_color = Color(0.7764706, 0.6745098, 0.9098039, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycdy4"]
+bg_color = Color(0.5574653, 0.3845829, 0.74865645, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w48qg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
+bg_color = Color(0.7921569, 0.69411767, 0.9137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.33333334, 0.7529412, 0.9254902, 0.9607843)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font_size = 63
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+texture = ExtResource("1_w48qg")
+stretch_mode = 1
+
+[node name="BoardBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+texture = ExtResource("2_272bh")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 954.0
+offset_top = 110.0
+offset_right = 1117.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_efxa6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_efxa6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ycdy4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w48qg")
+text = "Reset"
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1124.0
+offset_top = 112.0
+offset_right = 1212.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_efxa6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_efxa6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ycdy4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w48qg")
+text = "Menu"
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("3_lquwl")
+two_piece = ExtResource("4_272bh")
+four_piece = ExtResource("5_5vw27")
+background_piece = ExtResource("6_5vw27")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Grid"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = 175.25
+offset_right = 305.5
+offset_bottom = 471.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="ScoreLabel" type="Label" parent="Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg77c")
+text = "0"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg77c")
+text = "0"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Label" parent="Grid"]
+offset_left = 14.0
+offset_top = 107.0
+offset_right = 362.0
+offset_bottom = 176.0
+text = "Score"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score2" type="Label" parent="Grid"]
+offset_left = 6.0
+offset_top = 328.0
+offset_right = 354.0
+offset_bottom = 397.0
+text = "Best Score"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardControl" type="Node2D" parent="."]
+script = ExtResource("5_272bh")
+
+[node name="Tutorial" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 292.0
+offset_top = -173.0
+offset_right = 537.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "How to Play?
+Use your arrow keys to move the tiles. 
+
+When two tiles with the same number touch, they merge into one!"
+label_settings = SubResource("LabelSettings_efxa6")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GameOverLabel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="Label" type="Label" parent="GameOverLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -102.0
+offset_right = 199.0
+offset_bottom = 47.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO MORE MOVES LEFT!"
+label_settings = SubResource("LabelSettings_5vw27")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="GameOverLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = 31.5
+offset_right = 81.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_efxa6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_efxa6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ycdy4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w48qg")
+text = "Reset"
+
+[node name="MainTheme" parent="." instance=ExtResource("9_efxa6")]
+
+[node name="AudioPlayer" parent="." instance=ExtResource("8_efxa6")]
+bus = &"SFX"
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_dg77c")
+
+[node name="MergeSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-3, 3)
+stream = ExtResource("11_efxa6")
+volume_db = 12.235
+
+[node name="Icons8UpSquared64" type="Sprite2D" parent="."]
+position = Vector2(1068, 475)
+texture = ExtResource("12_ycdy4")
+
+[node name="Icons8UpSquared65" type="Sprite2D" parent="."]
+position = Vector2(1130, 535)
+rotation = 1.5707964
+texture = ExtResource("12_ycdy4")
+
+[node name="Icons8UpSquared66" type="Sprite2D" parent="."]
+position = Vector2(1069, 595)
+rotation = -3.1415925
+texture = ExtResource("12_ycdy4")
+
+[node name="Icons8UpSquared67" type="Sprite2D" parent="."]
+position = Vector2(1007, 535)
+rotation = -1.5707964
+texture = ExtResource("12_ycdy4")
+
+[connection signal="pressed" from="Button" to="Grid" method="_on_button_pressed"]
+[connection signal="pressed" from="Menu" to="Grid" method="_on_menu_pressed"]
+[connection signal="move" from="KeyboardControl" to="Grid" method="_on_keyboard_control_move"]
+[connection signal="pressed" from="GameOverLabel/Button2" to="Grid" method="_on_button_pressed"]

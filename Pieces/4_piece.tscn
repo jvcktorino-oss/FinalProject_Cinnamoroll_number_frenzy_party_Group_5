@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://y34b4htic23u"]
+
+[ext_resource type="PackedScene" uid="uid://pxjolu4auwab" path="res://Pieces/piece.tscn" id="1_s877u"]
+[ext_resource type="PackedScene" uid="uid://comidby2d4otc" path="res://Pieces/8_piece.tscn" id="2_sdvnk"]
+[ext_resource type="Texture2D" uid="uid://bf2cb3rxiuh1e" path="res://assets/svg-yellow.png" id="3_dk6dp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk6dp"]
+bg_color = Color(0.9882353, 0.76862746, 0.09803922, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_dk6dp"]
+font_size = 30
+font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="4piece" instance=ExtResource("1_s877u")]
+value = 4
+next_value = ExtResource("2_sdvnk")
+
+[node name="Panel" type="Panel" parent="." index="0"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dk6dp")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0, 14.999999)
+texture = ExtResource("3_dk6dp")
+
+[node name="Label" type="Label" parent="Sprite2D" index="0"]
+offset_left = -42.1978
+offset_top = -67.0
+offset_right = 43.8022
+offset_bottom = -25.0
+text = "4"
+label_settings = SubResource("LabelSettings_dk6dp")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hrol7p8ntm1v"]
+
+[ext_resource type="AudioStream" uid="uid://nonhcon74nim" path="res://assets/sounds/9-popsicle-cute-bgm-274660.mp3" id="1_al2pa"]
+
+[node name="MainTheme" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_al2pa")

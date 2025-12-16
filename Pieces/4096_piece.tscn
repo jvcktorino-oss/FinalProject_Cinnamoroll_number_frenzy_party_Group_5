@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp0c2vo3bhfon"]
+
+[ext_resource type="PackedScene" uid="uid://pxjolu4auwab" path="res://Pieces/piece.tscn" id="1_frlfs"]
+[ext_resource type="PackedScene" uid="uid://fln7va8jbb6o" path="res://Pieces/8192_piece.tscn" id="2_fobnn"]
+[ext_resource type="Texture2D" uid="uid://tclupa3wb8ku" path="res://assets/icons8-cinnamoroll-100 (9).png" id="3_08yma"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08yma"]
+bg_color = Color(1, 0.9843137, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_fobnn"]
+font_size = 30
+font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="4096piece" instance=ExtResource("1_frlfs")]
+value = 4096
+next_value = ExtResource("2_fobnn")
+
+[node name="Panel" type="Panel" parent="." index="0"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_08yma")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_08yma")
+offset = Vector2(0, 15)
+
+[node name="Label" type="Label" parent="Sprite2D" index="0"]
+offset_left = -43.252747
+offset_top = -53.0
+offset_right = 42.747253
+offset_bottom = -11.0
+text = "4096"
+label_settings = SubResource("LabelSettings_fobnn")
+horizontal_alignment = 1
+vertical_alignment = 1

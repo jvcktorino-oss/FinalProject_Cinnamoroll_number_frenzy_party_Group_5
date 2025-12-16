@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://dym5dpe7674p6"]
+
+[ext_resource type="Texture2D" uid="uid://dgex8bon2vqvf" path="res://assets/bg (2).png" id="1_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cjfps5fop4kp6" path="res://assets/GRID boardbackground.png" id="2_272bh"]
+[ext_resource type="Script" uid="uid://d3m5naquudu3c" path="res://grid.gd" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://g1y3v7j1tyvp" path="res://touch_control.gd" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cbqn4tuhtnpy1" path="res://Pieces/2_piece.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://y34b4htic23u" path="res://Pieces/4_piece.tscn" id="5_5vw27"]
+[ext_resource type="Script" uid="uid://d1ob1m62dlfpt" path="res://keyboard_control.gd" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://btyxjgxr6m47c" path="res://piece_background.tscn" id="6_5vw27"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 576.0
+offset_bottom = 1024.0
+texture = ExtResource("1_5vw27")
+stretch_mode = 3
+
+[node name="BoardBackground" type="Sprite2D" parent="."]
+position = Vector2(288, 720)
+texture = ExtResource("2_272bh")
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("3_lquwl")
+four_piece_chance = 5
+number_of_starting_pieces = 2
+two_piece = ExtResource("4_272bh")
+four_piece = ExtResource("5_5vw27")
+background_piece = ExtResource("6_5vw27")
+
+[node name="TouchControl" type="Node2D" parent="."]
+script = ExtResource("4_7mycd")
+
+[node name="KeyboardControl" type="Node2D" parent="."]
+script = ExtResource("5_272bh")
+
+[connection signal="move" from="TouchControl" to="Grid" method="_on_touch_control_move"]
+[connection signal="move" from="KeyboardControl" to="Grid" method="_on_keyboard_control_move"]

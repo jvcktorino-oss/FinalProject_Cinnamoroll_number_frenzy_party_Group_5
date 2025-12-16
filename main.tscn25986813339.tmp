@@ -1,0 +1,196 @@
+[gd_scene load_steps=17 format=3 uid="uid://dym5dpe7674p6"]
+
+[ext_resource type="Texture2D" uid="uid://ce5tg5so1qq1g" path="res://assets/Blue.png" id="1_w48qg"]
+[ext_resource type="Texture2D" uid="uid://cjfps5fop4kp6" path="res://assets/GRID boardbackground.png" id="2_272bh"]
+[ext_resource type="Script" uid="uid://d3m5naquudu3c" path="res://grid.gd" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cbqn4tuhtnpy1" path="res://Pieces/2_piece.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://y34b4htic23u" path="res://Pieces/4_piece.tscn" id="5_5vw27"]
+[ext_resource type="Script" uid="uid://d1ob1m62dlfpt" path="res://keyboard_control.gd" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://btyxjgxr6m47c" path="res://Pieces/piece_background.tscn" id="6_5vw27"]
+[ext_resource type="Script" uid="uid://wbajttyn3f6m" path="res://swipe_controller.gd" id="7_dg77c"]
+[ext_resource type="AudioStream" uid="uid://cle5dh817srl4" path="res://assets/sounds/UI_Quirky7.mp3" id="10_4c57u"]
+[ext_resource type="AudioStream" uid="uid://dhbptksh4qkuj" path="res://assets/sounds/Puzzle-Game-3_Looping-1.ogg" id="11_efxa6"]
+[ext_resource type="AudioStream" uid="uid://c3n2wtpm7p3gf" path="res://assets/sounds/game-over-417465.mp3" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://decydkd0uo1nl" path="res://assets/sounds/combine-394498.mp3" id="13_ycdy4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
+bg_color = Color(0.7921569, 0.69411767, 0.9137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.33333334, 0.7529412, 0.9254902, 0.9607843)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font_size = 63
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w48qg")
+stretch_mode = 1
+
+[node name="BoardBackground" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_272bh")
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("3_lquwl")
+two_piece = ExtResource("4_272bh")
+four_piece = ExtResource("5_5vw27")
+background_piece = ExtResource("6_5vw27")
+
+[node name="ResetButton" type="Button" parent="Grid"]
+offset_left = 1078.5028
+offset_top = 276.48108
+offset_right = 1137.5028
+offset_bottom = 329.48108
+text = "gfjhgj"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Grid"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = 175.25
+offset_right = 305.5
+offset_bottom = 471.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="ScoreLabel" type="Label" parent="Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg77c")
+text = "0"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg77c")
+text = "0"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Label" parent="Grid"]
+offset_left = 14.0
+offset_top = 107.0
+offset_right = 362.0
+offset_bottom = 176.0
+text = "Score"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score2" type="Label" parent="Grid"]
+offset_left = 6.0
+offset_top = 328.0
+offset_right = 354.0
+offset_bottom = 397.0
+text = "Best Score"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SwipeController" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_dg77c")
+
+[node name="KeyboardControl" type="Node2D" parent="."]
+script = ExtResource("5_272bh")
+
+[node name="GameOverLabel" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="Label" type="Label" parent="GameOverLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -102.0
+offset_right = 199.0
+offset_bottom = 47.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO MORE MOVES LEFT!"
+label_settings = SubResource("LabelSettings_5vw27")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -211.0
+offset_top = 68.0
+offset_right = -171.0
+offset_bottom = 108.0
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_4c57u")
+volume_db = 6.118
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_efxa6")
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_dg77c")
+
+[node name="MergeSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-3, 3)
+stream = ExtResource("13_ycdy4")
+volume_db = 12.235
+
+[connection signal="pressed" from="Grid/ResetButton" to="Grid" method="_on_reset_button_pressed"]
+[connection signal="swiped" from="SwipeController" to="Grid" method="_on_swipe_controller_swiped"]
+[connection signal="move" from="KeyboardControl" to="Grid" method="_on_keyboard_control_move"]

@@ -1,0 +1,212 @@
+[gd_scene load_steps=12 format=3 uid="uid://d2u1not6re3ov"]
+
+[ext_resource type="Script" uid="uid://chisxem2q31ai" path="res://Main Menu/main_menu.gd" id="1_8ketd"]
+[ext_resource type="Texture2D" uid="uid://ce5tg5so1qq1g" path="res://assets/Blue.png" id="2_8ketd"]
+[ext_resource type="FontFile" uid="uid://crrsobpjiqa0j" path="res://assets/PressStart2P-Regular.ttf" id="2_nb5b5"]
+
+[sub_resource type="Theme" id="Theme_15lat"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60tkv"]
+texture = ExtResource("2_8ketd")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.4509804, 0.4509804, 0.4509804, 0.7294118)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ketd"]
+line_spacing = 8.0
+font = ExtResource("2_nb5b5")
+font_size = 50
+font_color = Color(0.537395, 0.94186765, 0.909862, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15lat"]
+bg_color = Color(0.98039216, 0.90588236, 0.85490197, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ketd"]
+bg_color = Color(0.98069435, 0.905586, 0.85501534, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60tkv"]
+bg_color = Color(0.98069435, 0.905586, 0.85501534, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npuod"]
+bg_color = Color(0.19215687, 0.76862746, 0.9529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15lat"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ketd")
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_15lat")
+theme_override_styles/panel = SubResource("StyleBoxTexture_60tkv")
+
+[node name="Game Title" type="Label" parent="panel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.5
+offset_top = -337.0
+offset_right = 454.5
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+text = "Cinnamoroll Number Frenzy Party"
+label_settings = SubResource("LabelSettings_8ketd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="panel" type="Panel" parent="panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -89.5
+offset_right = 201.0
+offset_bottom = 257.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_15lat")
+theme_override_styles/panel = SubResource("StyleBoxFlat_15lat")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel/panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -142.5
+offset_right = 184.0
+offset_bottom = 142.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartButton" type="Button" parent="panel/panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Start Game
+
+"
+
+[node name="Settings" type="Button" parent="panel/panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Settings
+
+"
+
+[node name="Credits" type="Button" parent="panel/panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Credits
+
+"
+
+[node name="ExitButton" type="Button" parent="panel/panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Exit
+
+"
+
+[connection signal="pressed" from="panel/panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="panel/panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="panel/panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

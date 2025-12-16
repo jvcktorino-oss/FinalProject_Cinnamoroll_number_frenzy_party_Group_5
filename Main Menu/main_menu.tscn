@@ -1,0 +1,530 @@
+[gd_scene load_steps=34 format=3 uid="uid://d2u1not6re3ov"]
+
+[ext_resource type="Script" uid="uid://chisxem2q31ai" path="res://Main Menu/main_menu.gd" id="1_8ketd"]
+[ext_resource type="Texture2D" uid="uid://ce5tg5so1qq1g" path="res://assets/Blue.png" id="2_8ketd"]
+[ext_resource type="FontFile" uid="uid://crrsobpjiqa0j" path="res://assets/PressStart2P-Regular.ttf" id="2_nb5b5"]
+[ext_resource type="Script" uid="uid://j0vs1nqikdly" path="res://Main Menu/audio_control.gd" id="4_60tkv"]
+[ext_resource type="Texture2D" uid="uid://bclx1gelq8074" path="res://assets/svg_cinnamoroll.png" id="5_ev4s5"]
+[ext_resource type="Texture2D" uid="uid://ca4bqykir4jqd" path="res://assets/icons8-cinnamoroll-100 (11).png" id="6_qm7iq"]
+[ext_resource type="Texture2D" uid="uid://tclupa3wb8ku" path="res://assets/icons8-cinnamoroll-100 (9).png" id="7_jhmoq"]
+[ext_resource type="Texture2D" uid="uid://cyp4yjmm17onf" path="res://assets/icons8-cinnamoroll-100 (2).png" id="7_miurs"]
+[ext_resource type="Texture2D" uid="uid://bs00gavpxspfc" path="res://assets/icons8-cinnamoroll-100 (8).png" id="8_bbj2o"]
+[ext_resource type="Texture2D" uid="uid://dugidhqt820ux" path="res://assets/icons8-cinnamoroll-100 (3).png" id="8_ga7i7"]
+[ext_resource type="Texture2D" uid="uid://cbo0352yjop51" path="res://assets/icons8-cinnamoroll-100 (10).png" id="9_wr501"]
+[ext_resource type="Texture2D" uid="uid://o3efqvtg2wdu" path="res://assets/icons8-cinnamoroll-100 (5).png" id="10_1t8gn"]
+[ext_resource type="Texture2D" uid="uid://ba6ymv5ussiuj" path="res://assets/icons8-cinnamoroll-100 (4).png" id="11_miurs"]
+[ext_resource type="Texture2D" uid="uid://7uiixwfqdyns" path="res://assets/icons8-cinnamoroll-100 (6).png" id="11_ooh81"]
+[ext_resource type="Texture2D" uid="uid://ddpk1wsk5uejn" path="res://assets/icons8-cinnamoroll-100 (1).png" id="12_ga7i7"]
+[ext_resource type="Texture2D" uid="uid://cqtwfy5anikhk" path="res://assets/icons8-cinnamoroll-100.png" id="13_ooh81"]
+[ext_resource type="Texture2D" uid="uid://bwr0ne3hpmenl" path="res://assets/icons8-cinnamoroll-100 (7).png" id="14_mlhb2"]
+[ext_resource type="Texture2D" uid="uid://bya71ae3d7648" path="res://assets/icons8-cinnamoroll-100 (12).png" id="17_mlhb2"]
+[ext_resource type="Texture2D" uid="uid://scarjpg4hs0y" path="res://assets/icons8-cinnamoroll-100 (13).png" id="18_hka7c"]
+[ext_resource type="Texture2D" uid="uid://bf2cb3rxiuh1e" path="res://assets/svg-yellow.png" id="20_t5vg4"]
+
+[sub_resource type="Theme" id="Theme_15lat"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60tkv"]
+texture = ExtResource("2_8ketd")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.4509804, 0.4509804, 0.4509804, 0.7294118)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ketd"]
+line_spacing = 8.0
+font = ExtResource("2_nb5b5")
+font_size = 50
+font_color = Color(0.537395, 0.94186765, 0.909862, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15lat"]
+bg_color = Color(0.98039216, 0.90588236, 0.85490197, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ketd"]
+bg_color = Color(0.98069435, 0.905586, 0.85501534, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60tkv"]
+bg_color = Color(0.98069435, 0.905586, 0.85501534, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npuod"]
+bg_color = Color(0.19215687, 0.76862746, 0.9529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15lat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft8e8"]
+bg_color = Color(0.98039216, 0.90588236, 0.85490197, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_15lat"]
+font = ExtResource("2_nb5b5")
+font_size = 29
+font_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_60tkv"]
+font_size = 22
+font_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_15lat"]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ekim"]
+bg_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ketd")
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_15lat")
+theme_override_styles/panel = SubResource("StyleBoxTexture_60tkv")
+
+[node name="Game Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -433.25
+offset_top = 27.0
+offset_right = 433.25
+offset_bottom = 311.0
+grow_horizontal = 2
+size_flags_vertical = 6
+text = "Cinnamoroll Number Frenzy Party"
+label_settings = SubResource("LabelSettings_8ketd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MainButtons" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -89.5
+offset_right = 201.0
+offset_bottom = 257.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_15lat")
+theme_override_styles/panel = SubResource("StyleBoxFlat_15lat")
+
+[node name="MainButton" type="VBoxContainer" parent="MainButtons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -146.0
+offset_right = 184.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MainButtons/MainButton"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Start Game
+
+"
+
+[node name="Settings" type="Button" parent="MainButtons/MainButton"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Settings
+
+"
+
+[node name="Credits" type="Button" parent="MainButtons/MainButton"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Credits
+
+"
+
+[node name="ExitButton" type="Button" parent="MainButtons/MainButton"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Exit
+
+"
+
+[node name="SvgCinnamoroll" type="Sprite2D" parent="."]
+position = Vector2(648, 689)
+texture = ExtResource("5_ev4s5")
+
+[node name="SvgCinnamoroll2" type="Sprite2D" parent="."]
+position = Vector2(16, 273)
+texture = ExtResource("5_ev4s5")
+
+[node name="Icons8Cinnamoroll100(1)" type="Sprite2D" parent="."]
+position = Vector2(208, 110)
+texture = ExtResource("12_ga7i7")
+
+[node name="Icons8Cinnamoroll100(2)" type="Sprite2D" parent="."]
+position = Vector2(1102, 353)
+texture = ExtResource("7_miurs")
+
+[node name="Icons8Cinnamoroll100(3)" type="Sprite2D" parent="."]
+position = Vector2(-11, 500)
+texture = ExtResource("8_ga7i7")
+
+[node name="Icons8Cinnamoroll100(4)" type="Sprite2D" parent="."]
+position = Vector2(936, 638)
+texture = ExtResource("11_miurs")
+
+[node name="Icons8Cinnamoroll100(5)" type="Sprite2D" parent="."]
+position = Vector2(9, 710)
+texture = ExtResource("10_1t8gn")
+
+[node name="Icons8Cinnamoroll100(6)" type="Sprite2D" parent="."]
+position = Vector2(1287, 277)
+texture = ExtResource("11_ooh81")
+
+[node name="Icons8Cinnamoroll100(6)2" type="Sprite2D" parent="."]
+position = Vector2(400, 654)
+texture = ExtResource("11_ooh81")
+
+[node name="Icons8Cinnamoroll100(7)" type="Sprite2D" parent="."]
+position = Vector2(324, 500)
+texture = ExtResource("14_mlhb2")
+
+[node name="Icons8Cinnamoroll100(7)2" type="Sprite2D" parent="."]
+position = Vector2(1266, 708)
+texture = ExtResource("14_mlhb2")
+
+[node name="Icons8Cinnamoroll100(8)" type="Sprite2D" parent="."]
+position = Vector2(951, 470)
+texture = ExtResource("8_bbj2o")
+
+[node name="Icons8Cinnamoroll100(9)" type="Sprite2D" parent="."]
+position = Vector2(1284, 473)
+texture = ExtResource("7_jhmoq")
+
+[node name="Icons8Cinnamoroll100(10)" type="Sprite2D" parent="."]
+position = Vector2(1052, 111)
+texture = ExtResource("9_wr501")
+
+[node name="Icons8Cinnamoroll100(11)" type="Sprite2D" parent="."]
+position = Vector2(4, 62)
+texture = ExtResource("6_qm7iq")
+
+[node name="Icons8Cinnamoroll100(12)" type="Sprite2D" parent="."]
+position = Vector2(1280, 63)
+texture = ExtResource("17_mlhb2")
+
+[node name="Icons8Cinnamoroll100(13)" type="Sprite2D" parent="."]
+position = Vector2(377, 268)
+texture = ExtResource("18_hka7c")
+
+[node name="Icons8Cinnamoroll100(13)2" type="Sprite2D" parent="."]
+position = Vector2(1140, 583)
+texture = ExtResource("18_hka7c")
+
+[node name="Icons8Cinnamoroll100" type="Sprite2D" parent="."]
+position = Vector2(913, 277)
+texture = ExtResource("13_ooh81")
+
+[node name="Icons8Cinnamoroll101" type="Sprite2D" parent="."]
+position = Vector2(171, 565)
+texture = ExtResource("13_ooh81")
+
+[node name="SvgYellow" type="Sprite2D" parent="."]
+position = Vector2(200, 357)
+texture = ExtResource("20_t5vg4")
+
+[node name="Credits" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.25
+offset_top = -274.75
+offset_right = 464.25
+offset_bottom = 274.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ft8e8")
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 18.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_15lat")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 30.5
+offset_right = 256.0
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Icons : https://icons8.com/icons/set/cinnamoroll
+Inspiration : https://www.2048game.com/"
+label_settings = SubResource("LabelSettings_60tkv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Credits/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 114.5
+offset_right = 115.0
+offset_bottom = 417.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Group 5 Members:
+Jack Torino
+Nica Sophia Comision
+Majerref Joy Caing
+Vince Elmar Cadalin
+Carl Francis Ostia
+Mark Echavez
+Ralph Nicole Policher
+Mayben Eraño"
+label_settings = SubResource("LabelSettings_60tkv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Credits"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.5
+offset_top = -77.0
+offset_right = 101.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Back
+
+"
+
+[node name="Settings" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -114.5
+offset_right = 260.5
+offset_bottom = 276.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ft8e8")
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 18.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_15lat")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Settings/Label"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 47.5
+offset_top = 104.5
+offset_right = -308.5
+offset_bottom = 144.5
+grow_horizontal = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_60tkv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.5
+offset_top = -77.0
+offset_right = 101.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5372549, 0.9411765, 0.9098039, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_nb5b5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ketd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_60tkv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npuod")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15lat")
+text = "
+Back
+
+"
+
+[node name="AudioControl" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 58.5
+offset_top = 168.5
+offset_right = 466.0
+offset_bottom = 184.5
+theme_override_styles/slider = SubResource("StyleBoxLine_15lat")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_2ekim")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_2ekim")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_60tkv")
+audio_bus_name = "Master"
+
+[connection signal="pressed" from="MainButtons/MainButton/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainButtons/MainButton/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/MainButton/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainButtons/MainButton/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Settings/AudioControl" to="Settings/AudioControl" method="_on_value_changed"]

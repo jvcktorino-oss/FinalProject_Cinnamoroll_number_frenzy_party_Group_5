@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://gotaa0divaxa"]
+
+[ext_resource type="AudioStream" uid="uid://cle5dh817srl4" path="res://assets/sounds/UI_Quirky7.mp3" id="1_hlobe"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_hlobe")
+volume_db = 6.118
